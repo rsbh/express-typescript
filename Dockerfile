@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12-alpine AS
 
 WORKDIR /app
 
@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+RUN npm run build
+
 EXPOSE 8000
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
