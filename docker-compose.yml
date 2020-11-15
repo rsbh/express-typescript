@@ -1,6 +1,12 @@
 version: "3"
 
 services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
   app:
     build:
       context: .
@@ -9,3 +15,10 @@ services:
       - ./src:/app/src
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=db
