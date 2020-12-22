@@ -1,6 +1,6 @@
 import { Get, Route, Tags,  Post, Body, Path } from "tsoa";
 import {User} from '../models'
-import {getUsers, createUser, IUserPayload, getUser} from '../repositories/user'
+import {getUsers, createUser, IUserPayload, getUser} from '../repositories/user.repository'
 
 @Route("users")
 @Tags("User")
