@@ -4,5 +4,6 @@
   "spec": {
     "outputDirectory": "public",
     "specVersion": 3
-  }
+  },
+  "ignore": ["**/node_modules/**"]
 }
