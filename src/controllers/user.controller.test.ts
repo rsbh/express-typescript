@@ -13,6 +13,7 @@ describe("UserController", () => {
       const controller = new UserController();
       const users = await controller.getUsers();
       expect(users).toEqual([])
+      expect(spy).toHaveBeenCalledWith()
       expect(spy).toHaveBeenCalledTimes(1)
     })
 
@@ -22,6 +23,7 @@ describe("UserController", () => {
       const controller = new UserController();
       const users = await controller.getUsers();
       expect(users).toEqual(usersData)
+      expect(spy).toHaveBeenCalledWith()
       expect(spy).toHaveBeenCalledTimes(1)
     })
   })
