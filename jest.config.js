@@ -4,4 +4,8 @@ module.exports = {
   moduleNameMapper: {
     "test/(.*)": "<rootDir>/test/$1",
   },
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "src/**/*.{js,ts}",
+  ]
 };
