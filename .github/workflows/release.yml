@@ -17,5 +17,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
+          push: true
           registry: docker.pkg.github.com
           tags: docker.pkg.github.com/${{ github.repository }}:latest
