@@ -19,4 +19,4 @@ jobs:
           context: .
           push: true
           registry: docker.pkg.github.com
-          tags: docker.pkg.github.com/${{ github.repository }}:latest
+          tags: docker.pkg.github.com/${{ github.repository }}/express-typescript:latest
