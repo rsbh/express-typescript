@@ -1,5 +1,8 @@
 name: Build and Release
-on: push
+on:
+  push:
+    tags:
+      - "v*"
 
 jobs:
   docker:
@@ -7,6 +10,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Get release tag
+        id: get_version
+        uses: battila7/get-version-action@v2
       - name: Login to GitHub Packages Docker Registry
         uses: docker/login-action@v1
         with:
@@ -18,5 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          registry: docker.pkg.github.com
-          tags: docker.pkg.github.com/${{ github.repository }}/express-typescript:latest
+          tags: docker.pkg.github.com/${{ github.repository }}/express-typescript:latest, docker.pkg.github.com/${{ github.repository }}/express-typescript:${{ steps.get_version.outputs.version-without-v }}
