@@ -2,7 +2,7 @@ name: Build and Release
 on:
   push:
     tags:
-      - "v*"
+      - "v*.*.*"
 
 jobs:
   docker:
@@ -19,9 +19,18 @@ jobs:
           registry: docker.pkg.github.com
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and Push
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: docker.pkg.github.com/${{ github.repository }}/express-typescript:latest, docker.pkg.github.com/${{ github.repository }}/express-typescript:${{ steps.get_version.outputs.version-without-v }}
+          tags: |
+            docker.pkg.github.com/${{ github.repository }}/express-typescript:latest
+            docker.pkg.github.com/${{ github.repository }}/express-typescript:${{ steps.get_version.outputs.version-without-v }}
+            rsbh/express-typescript:latest
+            rsbh/express-typescript:${{ steps.get_version.outputs.version-without-v }}
