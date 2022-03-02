@@ -24,28 +24,28 @@
   },
   "homepage": "https://github.com/rsbh/express-typescript#readme",
   "devDependencies": {
-    "@types/express": "^4.17.8",
+    "@types/express": "^4.17.13",
     "@types/faker": "^5.1.5",
-    "@types/jest": "^26.0.19",
-    "@types/morgan": "^1.9.1",
-    "@types/node": "^14.11.2",
-    "@types/swagger-ui-express": "^4.1.2",
-    "concurrently": "^5.3.0",
+    "@types/jest": "^27.4.1",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.21",
+    "@types/swagger-ui-express": "^4.1.3",
+    "concurrently": "^7.0.0",
     "faker": "^5.1.0",
-    "jest": "^26.6.3",
-    "nodemon": "^2.0.4",
-    "ts-jest": "^26.4.4",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.6.0",
+    "typescript": "^4.6.2"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "morgan": "^1.10.0",
-    "pg": "^8.5.1",
+    "pg": "^8.7.3",
     "reflect-metadata": "^0.1.13",
-    "swagger-ui-express": "^4.1.4",
-    "tsoa": "^3.3.0",
-    "typeorm": "^0.2.29"
+    "swagger-ui-express": "^4.3.0",
+    "tsoa": "^3.2.1",
+    "typeorm": "^0.2.44"
   },
   "nodemonConfig": {
     "watch": [
